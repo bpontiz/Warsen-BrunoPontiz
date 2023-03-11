@@ -1,0 +1,55 @@
+section {
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(to right, #16222a, #3a6073);
+    font-family: 'Play';
+}
+
+.divTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logoStyle {
+    color: yellow;
+    padding: .1rem;
+    font-size: 40px;
+    margin-right: .5rem;
+    border: 2px dotted rgb(162, 221, 44);
+    border-radius: 10px 10px 50px 50px;
+
+}
+
+.divNavLinks {
+    display: flex;
+    flex-direction: row;
+}
+
+.titleStoreLink {
+    padding: 1rem;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.linkStyle {
+    text-decoration: none;
+    padding: 1rem;
+    color: white;
+    font-size: 16px;
+    transition: .2s ease-in-out;
+}
+
+.linkStyle:hover {
+    transform: scale(1.1);
+}
