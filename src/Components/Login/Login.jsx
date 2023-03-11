@@ -23,7 +23,11 @@ export default function Login() {
                     />
                     <label htmlFor="checkbox" className='showPassLabel'>Show Password</label>
                 </div>
-                <input type="submit" value="Submit" className='submitButton' />
+                <div className="divButtons">
+                    <input type="reset" value="Reset" className='submitButton reset' />
+                    <input type="submit" value="Submit" className='submitButton' />
+                </div>
+                
             </form>
         </div>
         
