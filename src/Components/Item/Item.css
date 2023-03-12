@@ -1,0 +1,80 @@
+
+
+.itemProductDiv {
+    background-color: #FFFFFF;
+    font-family: 'Rubik';
+    width: 300px;
+    border-radius: 40px;
+    -webkit-box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.75);
+    margin-bottom: 2rem;
+}
+
+.itemProductImageDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.itemProductName {
+    font-size: 16px;
+}
+
+.itemProductImage {
+    margin-top: .25rem;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.itemProductDetails {
+    font-size: 12px;
+    margin-bottom: .25rem;
+    height: 25px;
+}
+
+.itemProductPrice {
+    font-size: 14px;
+}
+
+.itemProductPriceCents {
+    font-size: 8px;
+}
+
+.itemProductStock {
+    font-size: 12px;
+}
+
+.itemProductName,.itemProductPrice,.itemProductStock,.itemProductDetails {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: .25rem;
+}
+
+.itemButtonsDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.itemButton {
+    padding: .2rem;
+    margin: .1rem;
+    font-size: 14px;
+    font-family: 'Rubik';
+    cursor: pointer;
+    width: 100px;
+    background: linear-gradient(to right, #7d7991, #4e5f72);
+    color: #FFF;
+    border: 1px solid #666666;
+    border-radius: 10px;
+    transition: .2s ease-in-out;
+}
+
+.itemButton:hover {
+    transition: .2s ease-in-out;
+    transform: translateY(-.2rem);
+}
