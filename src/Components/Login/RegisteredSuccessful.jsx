@@ -1,13 +1,15 @@
-import './Register.css';
+import './Login.css';
 import { useState } from 'react';
 
-export default function Register() {
+export default function Login() {
+
     const [password, setPassword] = useState("password")
 
     return (
         <div className='divForm'>
-            <form action='http://localhost:8081/api/users/' method="post" autoComplete='off' className='loginForm'>
-                <p className='login'>Sign Up</p>
+            <p className='registeredSuccess'>✅You have registered successfully</p>
+            <form action='http://localhost:8081/api/users/login' method="post" autoComplete='off' className='loginForm'>
+                <p className='login'>Log In</p>
                 <label htmlFor="username" className='labels'>Username</label>
                 <br />
                 <input type="text" name='username' className='inputBox' required/>
@@ -15,14 +17,6 @@ export default function Register() {
                 <label htmlFor="password" className='labels'>Password</label>
                 <br />
                 <input type={password} name='password' className='inputBox' id='passwordBox' required/>
-                <br />
-                <label htmlFor="adress" className='labels'>Adress</label>
-                <br />
-                <input type="text" name='adress' className='inputBox' required/>
-                <br />
-                <label htmlFor="email" className='labels'>Email</label>
-                <br />
-                <input type="email" name='email' className='inputBox' required/>
                 <br />
                 <div className="divPass">
                     <input type="checkbox" name="checkbox" value='Show Password' 

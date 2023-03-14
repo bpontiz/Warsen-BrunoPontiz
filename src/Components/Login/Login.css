@@ -86,3 +86,9 @@
     background-color: brown;
     color: yellow;
 }
+
+.registeredSuccess {
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Play';
+}

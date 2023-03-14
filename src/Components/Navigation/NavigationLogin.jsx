@@ -12,7 +12,7 @@ export default function Navigation() {
                 <ul className='divNavLinks'>
                     <Link className='linkStyle' to='/'><li>HOME</li></Link>
                     <Link className='linkStyle' to='#'><li>CART</li></Link>
-                    <Link className='linkStyle' to='/register'><li>SIGNUP</li></Link>
+                    <Link className='linkStyle' to='/registered'><li>LOGIN</li></Link>
                 </ul>
             </div>
         </section>

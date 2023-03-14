@@ -1,6 +1,4 @@
 .divForm {
-    top: 125px;
-    position: absolute;
     width: 100vw;
 }
 
@@ -85,4 +83,10 @@
 .reset {
     background-color: brown;
     color: yellow;
+}
+
+.registeredFailed {
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Play';
 }

@@ -1,17 +1,47 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navigation from './Components/Navigation/Navigation.jsx';
-// import Login from './Components/Login/Login.jsx';
-// import Register from './Components/Register/Register.jsx';
+import Login from './Components/Login/Login.jsx';
+import Register from './Components/Register/Register.jsx';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer.jsx';
+import NavigationLogin from './Components/Navigation/NavigationLogin.jsx';
+import RegisteredSuccessful from './Components/Login/RegisteredSuccessful.jsx';
+import RegisterFailed from './Components/Register/RegisterFailed.jsx';
 
 function App() {
   return (
     <Router>
-      <Navigation />
-      <ItemListContainer />
       <Routes>
-        <Route></Route>
+        <Route path='/' 
+          element={<>
+            <Navigation />
+            <ItemListContainer />
+          </>}
+        />
+        <Route path='/register' 
+          element={<>
+            <Navigation />
+            <Register />
+          </>} 
+        />
+        <Route path='/registered' 
+          element={<>
+            <NavigationLogin />
+            <Login />
+          </>} 
+        />
+        <Route path='/registered/successful'
+          element={<>
+            <NavigationLogin />
+            <RegisteredSuccessful />
+          </>}
+        />
+        <Route path='/registered/failed'
+          element={<>
+            <NavigationLogin />
+            <RegisterFailed />
+          </>}
+        />
       </Routes>
     </Router>
     
