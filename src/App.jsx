@@ -7,6 +7,8 @@ import ItemListContainer from './Components/ItemListContainer/ItemListContainer.
 import NavigationLogin from './Components/Navigation/NavigationLogin.jsx';
 import RegisteredSuccessful from './Components/Login/RegisteredSuccessful.jsx';
 import RegisterFailed from './Components/Register/RegisterFailed.jsx';
+import LoginSuccessful from './Components/Navigation/LoginSuccessful.jsx';
+import LoginFailed from './Components/Login/LoginFailed.jsx';
 
 function App() {
   return (
@@ -40,6 +42,18 @@ function App() {
           element={<>
             <NavigationLogin />
             <RegisterFailed />
+          </>}
+        />
+        <Route path='/logged'
+          element={<>
+            <LoginSuccessful />
+            <ItemListContainer />
+          </>}
+        />
+        <Route path='/logged/failed'
+          element={<>
+            <NavigationLogin />
+            <LoginFailed />
           </>}
         />
       </Routes>

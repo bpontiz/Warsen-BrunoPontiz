@@ -8,7 +8,7 @@ export default function Login() {
     return (
         <div className='divForm'>
             <p className='registeredSuccess'>✅You have registered successfully</p>
-            <form action='http://localhost:8081/api/users/login' method="post" autoComplete='off' className='loginForm'>
+            <form action='http://localhost:8081/api/users/auth/login' method="post" autoComplete='off' className='loginForm'>
                 <p className='login'>Log In</p>
                 <label htmlFor="username" className='labels'>Username</label>
                 <br />

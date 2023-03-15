@@ -21,8 +21,6 @@ export default function ItemListContainer() {
         getData();
 
     }, []);
-
-    console.log(products);
     
     return (
         <div className='productItemListContainer'><ItemList data={products} /></div>

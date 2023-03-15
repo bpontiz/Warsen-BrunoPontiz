@@ -1,15 +1,16 @@
-import './Register.css';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import './Login.css';
 
-export default function Register() {
+import { useState } from 'react';
+
+export default function Login() {
+
     const [password, setPassword] = useState("password")
 
     return (
         <div className='divForm'>
-            <p className='registeredFailed'>❌Email account already exists-</p>
-            <form action='http://localhost:8081/api/users/' method="post" autoComplete='off' className='loginForm'>
-                <p className='login'>Sign Up</p>
+            <p className='registeredFailed'>❌Username or password incorrect.</p>
+            <form action='http://localhost:8081/api/users/auth/login' method="post" autoComplete='off' className='loginForm'>
+                <p className='login'>Log In</p>
                 <label htmlFor="username" className='labels'>Username</label>
                 <br />
                 <input type="text" name='username' className='inputBox' required/>
@@ -18,21 +19,12 @@ export default function Register() {
                 <br />
                 <input type={password} name='password' className='inputBox' id='passwordBox' required/>
                 <br />
-                <label htmlFor="address" className='labels'>Address</label>
-                <br />
-                <input type="text" name='address' className='inputBox' required/>
-                <br />
-                <label htmlFor="email" className='labels'>Email</label>
-                <br />
-                <input type="email" name='email' className='inputBox' required/>
-                <br />
                 <div className="divPass">
                     <input type="checkbox" name="checkbox" value='Show Password' 
                         onClick={() => password === "password" ? setPassword("text") : setPassword("password")}
                     />
                     <label htmlFor="checkbox" className='showPassLabel'>Show Password</label>
                 </div>
-                <Link to='/registered' className='linkAlreadyAccount'><p className='alreadyAccount'>Already have an account?</p></Link>
                 <div className="divButtons">
                     <input type="reset" value="Reset" className='submitButton reset' />
                     <input type="submit" value="Submit" className='submitButton' />

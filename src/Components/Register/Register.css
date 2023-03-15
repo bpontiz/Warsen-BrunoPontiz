@@ -90,3 +90,20 @@
     font-size: 14px;
     font-family: 'Play';
 }
+
+.alreadyAccount {
+    font-size: 14px;
+    margin-left: .25rem;
+    text-align: start;
+    width: 200px;
+    margin: .25rem 0 .5rem 0;
+}
+
+.linkAlreadyAccount {
+    text-decoration: none;
+    color: black;
+}
+
+.linkAlreadyAccount:hover {
+    color: navy;
+}
