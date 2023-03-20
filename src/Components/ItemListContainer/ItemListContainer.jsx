@@ -22,7 +22,8 @@ export default function ItemListContainer() {
 
     }, []);
     
-    return (
+    return <>
+        <p className='footballText'>Football shirts for your collection</p>
         <div className='productItemListContainer'><ItemList data={products} /></div>
-    )
+    </>
 };
