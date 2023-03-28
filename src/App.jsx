@@ -9,6 +9,7 @@ import RegisteredSuccessful from './Components/Login/RegisteredSuccessful.jsx';
 import RegisterFailed from './Components/Register/RegisterFailed.jsx';
 import LoginSuccessful from './Components/Navigation/LoginSuccessful.jsx';
 import LoginFailed from './Components/Login/LoginFailed.jsx';
+import RegisterPassFailed from './Components/Register/RegisterPassFailed.jsx';
 
 function App() {
   return (
@@ -42,6 +43,12 @@ function App() {
           element={<>
             <NavigationLogin />
             <RegisterFailed />
+          </>}
+        />
+        <Route path='/registered/passFailed'
+          element={<>
+            <NavigationLogin />
+            <RegisterPassFailed />
           </>}
         />
         <Route path='/logged'

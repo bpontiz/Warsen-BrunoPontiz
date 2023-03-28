@@ -1,7 +1,17 @@
 import './Navigation.css';
 import {Link} from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 export default function Navigation() {
+    const [user, setUser] = useState('');
+
+    const signup = 'SIGN UP';
+
+    useEffect(() => {
+        const getUser = localStorage.getItem('username');
+        setUser(getUser);
+
+    }, []);
     return (
         <section>
             <div className='divTitle'>
@@ -12,7 +22,7 @@ export default function Navigation() {
                 <ul className='divNavLinks'>
                     <Link className='linkStyle' to='/'><li>HOME</li></Link>
                     <Link className='linkStyle' to='#'><li>CART</li></Link>
-                    <Link className='linkStyle' to='/register'><li>SIGNUP</li></Link>
+                    <Link className='linkStyle' to='/register'><li>{user === '' ? signup : user}</li></Link>
                 </ul>
             </div>
         </section>

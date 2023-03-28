@@ -7,7 +7,7 @@ export default function Register() {
 
     return (
         <div className='divForm'>
-            <p className='registeredFailed'>❌Email account already exists-</p>
+            <p className='registeredFailed'>❌Email account already exists</p>
             <form action='http://localhost:8081/api/users/' method="post" autoComplete='off' className='loginForm'>
                 <p className='login'>Sign Up</p>
                 <label htmlFor="username" className='labels'>Username</label>

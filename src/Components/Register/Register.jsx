@@ -17,6 +17,10 @@ export default function Register() {
                 <br />
                 <input type={password} name='password' className='inputBox' id='passwordBox' required/>
                 <br />
+                <label htmlFor="password" className='labels'>Repeat Password</label>
+                <br />
+                <input type={password} name='passwordRepeated' className='inputBox' id='passwordBox' required/>
+                <br />
                 <label htmlFor="address" className='labels'>Address</label>
                 <br />
                 <input type="text" name='address' className='inputBox' required/>

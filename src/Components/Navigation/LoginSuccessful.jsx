@@ -12,6 +12,7 @@ export default function LoginSuccessful() {
             try {
                 const getUser = await axios.get('http://localhost:8081/api/users/auth/login');
                 setUser(getUser.data);
+                localStorage.setItem('username', user.username);
             }
     
             catch (err) {
@@ -21,7 +22,7 @@ export default function LoginSuccessful() {
 
         getData();
 
-    }, []);
+    }, [user.username]);
 
     console.log(user);
 

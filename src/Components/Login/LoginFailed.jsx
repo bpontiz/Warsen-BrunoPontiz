@@ -1,5 +1,5 @@
 import './Login.css';
-
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function Login() {
@@ -25,6 +25,7 @@ export default function Login() {
                     />
                     <label htmlFor="checkbox" className='showPassLabel'>Show Password</label>
                 </div>
+                <Link to='/register' className='linkAlreadyAccount'><p className='alreadyAccount'>Create account</p></Link>
                 <div className="divButtons">
                     <input type="reset" value="Reset" className='submitButton reset' />
                     <input type="submit" value="Submit" className='submitButton' />
