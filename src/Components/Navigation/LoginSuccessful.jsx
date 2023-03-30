@@ -24,8 +24,6 @@ export default function LoginSuccessful() {
 
     }, [user.username]);
 
-    console.log(user);
-
     return (
         <section>
             <div className='divTitle'>
@@ -37,6 +35,10 @@ export default function LoginSuccessful() {
                     <Link className='linkStyle' to='/'><li>HOME</li></Link>
                     <Link className='linkStyle' to='#'><li>CART</li></Link>
                     <Link className='linkStyle' to='#'><li>{user.username}</li></Link>
+                    <Link className='linkStyle' to="/" onClick={() => {
+                            localStorage.setItem('username', '');
+                        }
+                    }><li>LOG OUT</li></Link>
                 </ul>
             </div>
         </section>
