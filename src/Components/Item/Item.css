@@ -78,3 +78,10 @@
     transition: .2s ease-in-out;
     transform: translateY(-.2rem);
 }
+
+.linkAddToCart {
+    padding: .2rem;
+    margin: .1rem;
+    text-decoration: none;
+    color: #FFF;
+}
