@@ -33,7 +33,7 @@ export default function LoginSuccessful() {
             <div className='divNav'>
                 <ul className='divNavLinks'>
                     <Link className='linkStyle' to='/'><li>HOME</li></Link>
-                    <Link className='linkStyle' to='#'><li>CART</li></Link>
+                    <Link className='linkStyle' to='/cart'><li>CART</li></Link>
                     <Link className='linkStyle' to='#'><li>{user.username}</li></Link>
                     <Link className='linkStyle' to="/" onClick={() => {
                             localStorage.setItem('username', '');

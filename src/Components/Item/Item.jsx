@@ -30,7 +30,7 @@ export default function Item( {id, name, price, stock, image, details} ) {
             <p className="itemProductStock">Stock: {stock}</p>
             <p className="itemProductDetails">{details}</p>
             <div className='itemButtonsDiv'>
-                <button className='itemButton' onClick={addToCartHandler}><Link to='/cart' className='linkAddToCart'>Add to cart</Link></button>
+                <button className='itemButton' onClick={addToCartHandler}><Link to='/cart' className='linkAddToCart' target='_blank'>Add to cart</Link></button>
                 <button className='itemButton'>Buy</button>
             </div>
         </div>

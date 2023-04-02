@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2/src/sweetalert2.js'
 import '@sweetalert2/theme-default/default.css';
+import axios from 'axios';
 
 export default function Navigation() {
     const [user, setUser] = useState('');
@@ -13,7 +14,7 @@ export default function Navigation() {
         const getUser = localStorage.getItem('username');
         setUser(getUser);
 
-    }, []);
+    }, [user]);
 
     return (
         <section>
@@ -26,7 +27,7 @@ export default function Navigation() {
                     <Link className='linkStyle' to='/'><li>HOME</li></Link>
                     <Link className='linkStyle' to='/cart'><li>CART</li></Link>
                     <Link className='linkStyle' to='/register'><li>{user === '' ? signup : user}</li></Link>
-                    <Link className='linkStyle' onClick={() => {
+                    <Link className='linkStyle' onClick={async () => {
                         if(user !== '') {
                             localStorage.setItem('username', '');
                             window.location.reload();
@@ -52,7 +53,7 @@ export default function Navigation() {
                             })
                         }
                         
-                    }} ><li>LOG OUT</li></Link>
+                    }} to="/" ><li>LOG OUT</li></Link>
                 </ul>
             </div>
         </section>
