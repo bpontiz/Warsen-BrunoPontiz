@@ -4,19 +4,23 @@ import axios from 'axios';
 
 export default function Item( {id, name, price, stock, image, details} ) {
     async function addToCartHandler() {
-        const getUserData = await axios.get('http://localhost:8081/api/users/auth/login');
-        const quantity = 1;
-        console.log(getUserData.data);
-
-        const newCart = {
-            email: getUserData.data.email,
-            items: {
-                name, price, quantity, image, details
-            },
-            address: getUserData.data.address
+        if(localStorage.getItem('username') !== '') {
+            const getUserData = await axios.get('http://localhost:8081/api/users/auth/login');
+            const quantity = 1;
+            console.log(getUserData.data);
+    
+            const newCart = {
+                email: getUserData.data.email,
+                items: {
+                    name, price, quantity, image, details
+                },
+                address: getUserData.data.address
+            };
+            
+            return await axios.post('http://localhost:8081/api/carts', newCart);
         };
-        
-        return await axios.post('http://localhost:8081/api/carts', newCart);
+
+        return console.log(`No user has been identified. Please log in.`);
     };
 
 
@@ -31,7 +35,6 @@ export default function Item( {id, name, price, stock, image, details} ) {
             <p className="itemProductDetails">{details}</p>
             <div className='itemButtonsDiv'>
                 <button className='itemButton' onClick={addToCartHandler}><Link to='/cart' className='linkAddToCart' target='_blank'>Add to cart</Link></button>
-                <button className='itemButton'>Buy</button>
             </div>
         </div>
     )
