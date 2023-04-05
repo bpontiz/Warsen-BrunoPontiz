@@ -11,6 +11,7 @@ import LoginSuccessful from './Components/Navigation/LoginSuccessful.jsx';
 import LoginFailed from './Components/Login/LoginFailed.jsx';
 import RegisterPassFailed from './Components/Register/RegisterPassFailed.jsx';
 import Cart from './Components/Cart/Cart.jsx';
+import Contact from './Components/Contact/Contact.jsx';
 
 function App() {
   return (
@@ -68,6 +69,12 @@ function App() {
           element={<>
             <Navigation />
             <Cart />
+          </>}
+        />
+        <Route path='/contact'
+          element={<>
+            <Navigation />
+            <Contact />
           </>}
         />
       </Routes>

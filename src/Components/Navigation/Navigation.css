@@ -1,4 +1,4 @@
-section {
+.sectionNavigation {
     display: flex;
     flex-direction: row;
     top: 0;
@@ -29,6 +29,16 @@ section {
 .divNavLinks {
     display: flex;
     flex-direction: row;
+}
+
+.divIconUser {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.svgPersonIcon {
+    margin-right: .25rem;
 }
 
 .titleStoreLink {
