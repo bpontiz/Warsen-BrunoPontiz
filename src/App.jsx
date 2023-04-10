@@ -71,7 +71,7 @@ function App() {
             <Cart />
           </>}
         />
-        <Route path='/contact'
+        <Route path='/chat'
           element={<>
             <Navigation />
             <Contact />

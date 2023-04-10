@@ -12,8 +12,9 @@
     flex-direction: column;
     justify-content: space-between;
     padding: .25rem;
-    border-radius: 20px;
-    background: linear-gradient(to right, #3d7eaa, #ffe47a);
+    border-radius: 10px;
+    background: linear-gradient(to right, #5d4157, #a8caba);
+    /* background: linear-gradient(to right, #3d7eaa, #ffe47a); */
 }
 
 .formContact {
@@ -34,7 +35,7 @@
     width: 500px;
     margin: 0;
     border: 1px solid #888888;
-    border-radius: 20px;
+    border-radius: 10px;
     outline: #555555;
     padding: .2rem .35rem .2rem .35rem;
 }
@@ -50,4 +51,51 @@
 .buttonFormContact:hover {
     transition: 100ms ease-in-out;
     transform: scale(1.2);
+}
+
+.divAllMessages {
+    padding: .2rem .1rem .1rem .1rem;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    overflow: scroll;
+}
+
+.divMessageChatMe {
+    border-radius: 5px;
+    margin: 0rem .1rem 0 .1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.divMessageChat {
+    border-radius: 5px;
+    margin: 0rem .1rem 0 .1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.pMessageChatMe {
+    border-radius: 5px;
+    padding: .5rem;
+    font-size: 14px;
+    font-family: 'Arial';
+    word-break: break-all;
+    text-align: left;
+    border: 1px solid rgb(106, 238, 176);
+    background-color: rgb(106, 238, 176);
+}
+
+.pMessageChat {
+    border-radius: 5px;
+    padding: .5rem;
+    font-size: 14px;
+    font-family: 'Arial';
+    word-break: break-all;
+    text-align: right;
+    border: 1px solid #91d3ff;
+    background-color: #91d3ff;
 }

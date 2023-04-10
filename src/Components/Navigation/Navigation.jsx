@@ -27,10 +27,10 @@ export default function Navigation() {
                 <ul className='divNavLinks'>
                     <Link className='linkStyle' to='/'><li>HOME</li></Link>
                     <Link className='linkStyle' to='/cart'><li>CART</li></Link>
-                    <Link className='linkStyle' to='/contact'><li>CONTACT</li></Link>
+                    <Link className='linkStyle' to='/chat'><li>CONTACT</li></Link>
                     <Link className='linkStyle' to='/register'>
                         <div className='divIconUser'>
-                            <svg className='svgPersonIcon' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <svg className='bi bi-person-fill svgPersonIcon' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
                             </svg>
                             <li>{user === '' ? signup : user}</li>
