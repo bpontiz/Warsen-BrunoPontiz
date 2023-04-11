@@ -59,7 +59,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 6px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .divMessageChatMe {
@@ -98,4 +98,37 @@
     text-align: right;
     border: 1px solid #91d3ff;
     background-color: #91d3ff;
+}
+
+.sectionContactNoUser {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    font-family: 'Play';
+}
+
+.imgContactNoUser {
+    max-width: 200px;
+    margin: .25rem 0 2rem 0;
+}
+
+.linkContactNoUser {
+    text-decoration: none;
+}
+
+.pContactNoUserOops {
+    font-size: 16px;
+}
+
+.pContactNoUser {
+    color: black;
+    transition: 200ms ease-in-out;
+}
+
+.pContactNoUser:hover {
+    transition: 200ms ease-in-out;
+    transform: translateX(1.25rem);
 }
