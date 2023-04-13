@@ -157,3 +157,31 @@
     transition: 400ms ease-in-out;
     transform: rotate(360deg);
 }
+
+.divButtonCartBuy{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonCartBuy {
+    border: 1px solid orangered;
+    border-radius: 5px;
+    padding: .25rem;
+    width: 125px;
+    cursor: pointer;
+    font-family: 'Play';
+    font-size: 18px;
+    color: orangered;
+    background-color: white;
+    margin: 1rem 0 5rem 0;
+    transition: .2s ease-in-out;
+}
+
+.buttonCartBuy:hover {
+    transition: .2s ease-in-out;
+    transform: translateY(-.3rem);
+    color: white;
+    background-color: orangered;
+}

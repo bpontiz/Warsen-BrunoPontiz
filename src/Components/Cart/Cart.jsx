@@ -10,7 +10,29 @@ export default function Cart() {
 
     const [ cart, setCart ] = useState([]);
 
-    let totalPrice = 0;   
+    let totalPrice = 0;
+
+    const handleBuyButton = async () => {
+        console.log(cart);
+
+        if(cart.length === 0) {
+            return console.log('Cart is empty. Please add at least one product in order to buy.');
+        }
+
+        else {
+            return cart.forEach(
+                async item => await axios.post(
+                    'http://localhost:8081/api/orders',
+                    ({
+                        email: item.email,
+                        items: {
+                            description: cart.map(el => `${el.items.name} x ${el.items.quantity}`)
+                        }
+                    })
+                )
+            );
+        };
+    };
 
 
     useEffect(() => {
@@ -67,6 +89,10 @@ export default function Cart() {
                     </>)
                 }
             </div>
+            <div className='divButtonCartBuy'>
+                <button className='buttonCartBuy' onClick={() => handleBuyButton()}>Buy</button>
+            </div>
+            
             
         </>
     }
