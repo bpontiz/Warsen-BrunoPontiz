@@ -8,8 +8,6 @@ import trashBin from '../../Multimedia/trashBin.png';
 import Swal from 'sweetalert2/src/sweetalert2.js';
 import '@sweetalert2/theme-default/default.css';
 
-let getLocalUser = localStorage.getItem('username');
-
 export default function Cart() {
 
     const [ cart, setCart ] = useState([]);
