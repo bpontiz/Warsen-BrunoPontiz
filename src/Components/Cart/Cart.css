@@ -185,3 +185,11 @@
     color: white;
     background-color: orangered;
 }
+
+.swal2-popup {
+    border-radius: 20px;
+    font-size: 1rem;
+    font-family: 'Play';
+    background-color: #FFF;
+    color: black;
+}

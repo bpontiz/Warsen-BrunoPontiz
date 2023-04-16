@@ -5,6 +5,10 @@ import ShoppingCart from '../../Multimedia/shopping-cart.png';
 import emptyCart from '../../Multimedia/emptyCart.jpg';
 import axios from 'axios';
 import trashBin from '../../Multimedia/trashBin.png';
+import Swal from 'sweetalert2/src/sweetalert2.js';
+import '@sweetalert2/theme-default/default.css';
+
+let getLocalUser = localStorage.getItem('username');
 
 export default function Cart() {
 
@@ -20,20 +24,42 @@ export default function Cart() {
         }
 
         else {
-            return cart.forEach(
-                async item => await axios.post(
-                    'http://localhost:8081/api/orders',
-                    ({
-                        email: item.email,
-                        items: {
-                            description: cart.map(el => `${el.items.name} x ${el.items.quantity}`)
-                        }
-                    })
-                )
+
+            Swal.fire({
+                title: 'Please confirm your order',
+                text: "Warsen clothing",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Confirm'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+
+                        cart.forEach(
+                            async (item) => {
+                                await axios.post(
+                                    'http://localhost:8081/api/orders',
+                                    ({
+                                        email: item.email,
+                                        items: {
+                                            description: cart.map(el => `${el.items.name} x ${el.items.quantity}`)
+                                        }
+                                    })
+                                );
+
+                                Swal.fire(
+                                    'Order confirmed!',
+                                    `We have sent you an email to ${item.email}`,
+                                    'success'
+                                );
+                            }
+                        );
+                    }
+                }
             );
         };
     };
-
 
     useEffect(() => {
         async function modifyCart() {
@@ -53,7 +79,7 @@ export default function Cart() {
         }
 
         modifyCart();
-    });
+    },[]);
 
     if( cart.length !== 0 ) {
         return <>
@@ -70,7 +96,7 @@ export default function Cart() {
             </div>
             <div className='divMapCart'>
                 {
-                    cart.map(product => <>
+                    cart.map((product) => <>
                         <div className='divMapCartItems'>
                             <div className='divMapCartShirtList'>
                                 <img className='imgMapCart' src={product.items.image} alt="Football Shirt" />
@@ -79,7 +105,8 @@ export default function Cart() {
                                     <li className='liMapCart quantity'>Quantity: {product.items.quantity}</li>
                                     <li className='liMapCart details'>{product.items.details}</li>
                                     <li className='liMapCart trashBin'><img className='imgTrashBin' src={trashBin} alt="trashBin" onClick={async () => {
-                                        await axios.delete(`http://localhost:8081/api/carts/${product._id}`);
+                                        await axios.delete(`http://localhost:8081/api/carts/${product._id}`)
+                                        window.location.reload();
                                     }} /></li>
                                 </ul>
                             </div>                        
@@ -90,14 +117,14 @@ export default function Cart() {
                 }
             </div>
             <div className='divButtonCartBuy'>
-                <button className='buttonCartBuy' onClick={() => handleBuyButton()}>Buy</button>
-            </div>
-            
-            
+                <button className='buttonCartBuy' onClick={handleBuyButton}>
+                    Buy
+                </button>
+            </div>            
         </>
     }
 
-    else if(localStorage.getItem('username') === '') {
+    else if(localStorage.getItem('username') === '' || !getLocalUser) {
         return <>
             <div className='cartDivStyle'>
                 <p className='mainpCart'>Your cart is empty</p>

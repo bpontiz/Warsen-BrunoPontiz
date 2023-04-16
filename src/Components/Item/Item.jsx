@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Item( {id, name, price, stock, image, details} ) {
+
     async function addToCartHandler() {
+        
         if(localStorage.getItem('username') !== '') {
             const getUserData = await axios.get('http://localhost:8081/api/users/auth/login');
             const quantity = 1;

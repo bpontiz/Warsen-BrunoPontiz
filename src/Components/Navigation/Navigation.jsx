@@ -1,7 +1,7 @@
 import './Navigation.css';
 import {Link} from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import Swal from 'sweetalert2/src/sweetalert2.js'
+import Swal from 'sweetalert2/src/sweetalert2.js';
 import '@sweetalert2/theme-default/default.css';
 
 export default function Navigation() {
