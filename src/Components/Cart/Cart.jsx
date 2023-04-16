@@ -124,7 +124,7 @@ export default function Cart() {
         </>
     }
 
-    else if(localStorage.getItem('username') === '' || !getLocalUser) {
+    else if(localStorage.getItem('username') === '') {
         return <>
             <div className='cartDivStyle'>
                 <p className='mainpCart'>Your cart is empty</p>
