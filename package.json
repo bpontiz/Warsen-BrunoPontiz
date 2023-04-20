@@ -11,6 +11,7 @@
     "axios": "^1.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-dotenv": "^0.1.3",
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
     "socket.io-client": "^4.6.1",
@@ -35,6 +36,9 @@
       "not dead",
       "not op_mini all"
     ],
+    "react-dotenv": {
+      "whitelist": ["SERVER_BASE_URL"]
+    },
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",

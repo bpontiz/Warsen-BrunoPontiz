@@ -186,10 +186,10 @@
     background-color: orangered;
 }
 
-.swal2-popup {
+.swal2-popup, .swal-popup {
     border-radius: 20px;
-    font-size: 1rem;
+    font-size: .75rem;
     font-family: 'Play';
-    background-color: #FFF;
+    background-color: #fff;
     color: black;
 }

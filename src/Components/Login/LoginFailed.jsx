@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export default function Login() {
 
-    const [password, setPassword] = useState("password")
+    const [password, setPassword] = useState("password");
 
     return (
         <div className='divForm'>

@@ -14,6 +14,8 @@ export default function Cart() {
 
     let totalPrice = 0;
 
+    const apiURL = process.env.REACT_APP_SERVER_BASE_URL || 'http://localhost:8081/api';
+
     const handleBuyButton = async () => {
         console.log(cart);
 
@@ -37,11 +39,11 @@ export default function Cart() {
                         cart.forEach(
                             async (item) => {
                                 await axios.post(
-                                    'http://localhost:8081/api/orders',
+                                    `${apiURL}/orders`,
                                     ({
                                         email: item.email,
                                         items: {
-                                            description: cart.map(el => `${el.items.name} x ${el.items.quantity}`)
+                                            description: cart.map(el => `${el.items.name} x ${el.items.quantity} subtotal: $ ${el.items.price}.00 `)
                                         }
                                     })
                                 );
@@ -64,9 +66,9 @@ export default function Cart() {
             const getUser = localStorage.getItem('username');
 
             if(getUser !== '') {
-                const getUserData = await axios.get('http://localhost:8081/api/users/auth/login');
+                const getUserData = await axios.get(`${apiURL}/users/auth/login`);
 
-                const getCart = await axios.get(`http://localhost:8081/api/carts/filter/${getUserData.data.email}`);
+                const getCart = await axios.get(`${apiURL}/carts/filter/${getUserData.data.email}`);
 
                 return setCart(getCart.data);
             }
@@ -77,7 +79,7 @@ export default function Cart() {
         }
 
         modifyCart();
-    },[]);
+    },[apiURL]);
 
     if( cart.length !== 0 ) {
         return <>
@@ -103,7 +105,7 @@ export default function Cart() {
                                     <li className='liMapCart quantity'>Quantity: {product.items.quantity}</li>
                                     <li className='liMapCart details'>{product.items.details}</li>
                                     <li className='liMapCart trashBin'><img className='imgTrashBin' src={trashBin} alt="trashBin" onClick={async () => {
-                                        await axios.delete(`http://localhost:8081/api/carts/${product._id}`)
+                                        await axios.delete(`${apiURL}/carts/${product._id}`)
                                         window.location.reload();
                                     }} /></li>
                                 </ul>
